@@ -70,6 +70,19 @@ PODS:
   - hermes-engine (0.74.5):
     - hermes-engine/Pre-built (= 0.74.5)
   - hermes-engine/Pre-built (0.74.5)
+  - Netmera (3.23.13-WithoutDependency):
+    - Netmera/NetmeraWithAdId (= 3.23.13-WithoutDependency)
+  - Netmera/AdIdSupport (3.23.13-WithoutDependency)
+  - Netmera/Application (3.23.13-WithoutDependency):
+    - NetmeraCore (= 3.23.13-WithoutDependency)
+  - Netmera/NetmeraWithAdId (3.23.13-WithoutDependency):
+    - Netmera/AdIdSupport
+    - Netmera/Application
+  - Netmera/NotificationContentExtension (3.23.13-WithoutDependency):
+    - NetmeraCore (= 3.23.13-WithoutDependency)
+  - Netmera/NotificationServiceExtension (3.23.13-WithoutDependency):
+    - NetmeraCore (= 3.23.13-WithoutDependency)
+  - NetmeraCore (3.23.13-WithoutDependency)
   - RCT-Folly (2024.01.01.00):
     - boost
     - DoubleConversion
@@ -1250,6 +1263,9 @@ PODS:
     - ReactCommon/turbomodule/bridging
     - ReactCommon/turbomodule/core
     - Yoga
+  - RNNetmera (1.7.9):
+    - Netmera (= 3.23.13-WithoutDependency)
+    - React
   - RNReanimated (3.10.1):
     - DoubleConversion
     - glog
@@ -1314,6 +1330,9 @@ DEPENDENCIES:
   - fmt (from `../node_modules/react-native/third-party-podspecs/fmt.podspec`)
   - glog (from `../node_modules/react-native/third-party-podspecs/glog.podspec`)
   - hermes-engine (from `../node_modules/react-native/sdks/hermes-engine/hermes-engine.podspec`)
+  - Netmera (= 3.23.13-WithoutDependency)
+  - Netmera/NotificationContentExtension (= 3.23.13-WithoutDependency)
+  - Netmera/NotificationServiceExtension (= 3.23.13-WithoutDependency)
   - RCT-Folly (from `../node_modules/react-native/third-party-podspecs/RCT-Folly.podspec`)
   - RCT-Folly/Fabric (from `../node_modules/react-native/third-party-podspecs/RCT-Folly.podspec`)
   - RCTDeprecation (from `../node_modules/react-native/ReactApple/Libraries/RCTFoundation/RCTDeprecation`)
@@ -1365,12 +1384,15 @@ DEPENDENCIES:
   - React-utils (from `../node_modules/react-native/ReactCommon/react/utils`)
   - ReactCommon/turbomodule/core (from `../node_modules/react-native/ReactCommon`)
   - RNGestureHandler (from `../node_modules/react-native-gesture-handler`)
+  - RNNetmera (from `../node_modules/react-native-netmera`)
   - RNReanimated (from `../node_modules/react-native-reanimated`)
   - RNScreens (from `../node_modules/react-native-screens`)
   - Yoga (from `../node_modules/react-native/ReactCommon/yoga`)
 
 SPEC REPOS:
   trunk:
+    - Netmera
+    - NetmeraCore
     - SocketRocket
 
 EXTERNAL SOURCES:
@@ -1507,6 +1529,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon"
   RNGestureHandler:
     :path: "../node_modules/react-native-gesture-handler"
+  RNNetmera:
+    :path: "../node_modules/react-native-netmera"
   RNReanimated:
     :path: "../node_modules/react-native-reanimated"
   RNScreens:
@@ -1532,6 +1556,8 @@ SPEC CHECKSUMS:
   fmt: 4c2741a687cc09f0634a2e2c72a838b99f1ff120
   glog: fdfdfe5479092de0c4bdbebedd9056951f092c4f
   hermes-engine: 8c1577f3fdb849cbe7729c2e7b5abc4b845e88f8
+  Netmera: b7b03e8bc56e7d46e9da7c623344e1b383f374c8
+  NetmeraCore: e2315597c9a4d88715a07b87c724f60a5e544386
   RCT-Folly: 02617c592a293bd6d418e0a88ff4ee1f88329b47
   RCTDeprecation: 3afceddffa65aee666dafd6f0116f1d975db1584
   RCTRequired: ec1239bc9d8bf63e10fb92bd8b26171a9258e0c1
@@ -1581,11 +1607,12 @@ SPEC CHECKSUMS:
   React-utils: f242eb7e7889419d979ca0e1c02ccc0ea6e43b29
   ReactCommon: f7da14a8827b72704169a48c929bcde802698361
   RNGestureHandler: 2282cfbcf86c360d29f44ace393203afd5c6cff7
+  RNNetmera: df7456540c1098041a1e60fdd711f238f1f34fc0
   RNReanimated: 35f9ac9c3ac42d0497ebd1cce5c39d7687a8493e
   RNScreens: b32a9ff15bea7fcdbe5dff6477bc503f792b1208
   SocketRocket: abac6f5de4d4d62d24e11868d7a2f427e0ef940d
   Yoga: 950bbfd7e6f04790fdb51149ed51df41f329fcc8
 
-PODFILE CHECKSUM: 7919f3e4b90d55e35ad90ec05afcbcc5d0a70b0e
+PODFILE CHECKSUM: aba67a586034110e89a26d4874e60fee5bf21fb8
 
 COCOAPODS: 1.15.2
