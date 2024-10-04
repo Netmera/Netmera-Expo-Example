@@ -6,6 +6,8 @@ import { useEffect } from 'react';
 import 'react-native-reanimated';
 
 import { useColorScheme } from '@/hooks/useColorScheme';
+import { StatusBar } from 'expo-status-bar';
+import Toast from 'react-native-toast-message';
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
@@ -28,10 +30,18 @@ export default function RootLayout() {
 
   return (
     <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-      <Stack>
-        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-        <Stack.Screen name="+not-found" />
+        <StatusBar 
+          style="auto"
+          backgroundColor={colorScheme === 'dark' ? '#000' : '#fff'} 
+        />  
+        <Stack initialRouteName='Dashboard' screenOptions={{ headerShown: true }}>
+        <Stack.Screen name="Category"/>
+        <Stack.Screen name="Coupons"/>
+        <Stack.Screen name="Events"/>
+        <Stack.Screen name="PushInbox"/>
+        <Stack.Screen name="User"/>
       </Stack>
+      <Toast />
     </ThemeProvider>
   );
 }
