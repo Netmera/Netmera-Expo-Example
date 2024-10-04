@@ -29,7 +29,7 @@ export default function RootLayout() {
   }
 
   return (
-    <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
+    <ThemeProvider value={colorScheme === 'dark' ? DefaultTheme : DefaultTheme}>
         <StatusBar 
           style="auto"
           backgroundColor={colorScheme === 'dark' ? '#000' : '#fff'} 
