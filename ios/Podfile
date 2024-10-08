@@ -41,6 +41,10 @@ target 'NetmeraExpoExample' do
   use_frameworks! :linkage => podfile_properties['ios.useFrameworks'].to_sym if podfile_properties['ios.useFrameworks']
   use_frameworks! :linkage => ENV['USE_FRAMEWORKS'].to_sym if ENV['USE_FRAMEWORKS']
 
+  pod "Netmera", "3.23.13-WithoutDependency"
+  pod "Netmera/NotificationServiceExtension", "3.23.13-WithoutDependency"
+  pod "Netmera/NotificationContentExtension", "3.23.13-WithoutDependency"
+
   use_react_native!(
     :path => config[:reactNativePath],
     :hermes_enabled => podfile_properties['expo.jsEngine'] == nil || podfile_properties['expo.jsEngine'] == 'hermes',

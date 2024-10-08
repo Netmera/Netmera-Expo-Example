@@ -11,6 +11,8 @@ import com.facebook.react.ReactHost
 import com.facebook.react.defaults.DefaultNewArchitectureEntryPoint.load
 import com.facebook.react.defaults.DefaultReactNativeHost
 import com.facebook.soloader.SoLoader
+import com.netmera.reactnativesdk.RNNetmera
+import com.netmera.reactnativesdk.RNNetmeraConfiguration
 
 import expo.modules.ApplicationLifecycleDispatcher
 import expo.modules.ReactNativeHostWrapper
@@ -45,6 +47,14 @@ class MainApplication : Application(), ReactApplication {
       // If you opted-in for the New Architecture, we load the native entry point for this app.
       load()
     }
+            val netmeraConfiguration = RNNetmeraConfiguration.Builder()
+            .firebaseSenderId("655729015885")
+            .huaweiSenderId("106391851")
+            .apiKey("gFtyH_nz5WAWBrHDHVZGcvZSiLcX3EKvpa8kKw2_9g_nddZi3eS8BQnTgWceIsyB") // This is for enabling Netmera logs.
+            .logging(true) // This is for enabling Netmera logs.
+            .build(this)
+        RNNetmera.initNetmera(netmeraConfiguration)
+        
     ApplicationLifecycleDispatcher.onApplicationCreate(this)
   }
 

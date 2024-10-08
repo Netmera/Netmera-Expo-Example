@@ -1,6 +1,8 @@
 apply plugin: "com.android.application"
 apply plugin: "org.jetbrains.kotlin.android"
 apply plugin: "com.facebook.react"
+apply plugin: 'com.google.gms.google-services'
+apply plugin: 'com.huawei.agconnect'
 
 def projectRoot = rootDir.getAbsoluteFile().getParentFile().getAbsolutePath()
 
@@ -111,7 +113,7 @@ android {
 
     namespace 'com.anonymous.NetmeraExpoExample'
     defaultConfig {
-        applicationId 'com.anonymous.NetmeraExpoExample'
+        applicationId 'com.netmerareactnativeexample'
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
@@ -167,6 +169,7 @@ android {
 }
 
 dependencies {
+    implementation 'androidx.core:core:1.9.0'
     // The version of react-native is set by the React Native Gradle Plugin
     implementation("com.facebook.react:react-android")
 
