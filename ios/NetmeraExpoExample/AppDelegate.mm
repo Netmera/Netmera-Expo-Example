@@ -21,7 +21,7 @@
   
   // Init Netmera
   [RNNetmera logging: YES];
-  [RNNetmera initNetmera: @"YOUR_API KEY"]; // Replace @"..." with your own NETMERA API KEY.
+  [RNNetmera initNetmera: @"YOUR_NETMERA_API KEY"]; // Replace @"..." with your own NETMERA API KEY.
   [Netmera setBaseURL: @"https://sdkapi.netmera.com"];
   [RNNetmera requestPushNotificationAuthorization];
   [RNNetmera setPushDelegate:self];
