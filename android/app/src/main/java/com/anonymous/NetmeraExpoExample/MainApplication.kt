@@ -50,7 +50,7 @@ class MainApplication : Application(), ReactApplication {
             val netmeraConfiguration = RNNetmeraConfiguration.Builder()
             .firebaseSenderId("YOUR_FIREBASE_SENDER_ID")
             .huaweiSenderId("YOUR_HUAWEI_SENDER_ID")
-            .apiKey("YOUR_NETMERA_API_KEY") // This is for enabling Netmera logs.
+            .apiKey("YOUR_NETMERA_API_KEY")
             .logging(true) // This is for enabling Netmera logs.
             .build(this)
         RNNetmera.initNetmera(netmeraConfiguration)
