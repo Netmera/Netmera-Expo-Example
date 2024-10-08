@@ -8,15 +8,10 @@ NETMERA is a Mobile Application Engagement Platform. We offer a series of develo
 
 ## Expo Prebuild Installation
 
-Run expo prebuild
-You can now run the expo prebuild command. This command will generate the native Android and iOS projects in your Expo app.
-If you haven't run expo prebuild before, simply execute the following command:
-npx expo prebuild
-If you have already run it previously and made changes to the configuration, you can run the command again to regenerate the native files and apply the changes.
-This will create the necessary ios and android folders in your project root, enabling you to build the native code for both platforms.
+In order to perform Native integrations, you must first expose the project's Native modules. To do this, you must run the `npx expo prebuild` command. If your project's native modules (android and ios folders) are exposed, you do not need to run this command.
 
 ## Handling the Absence of index.js in New Versions of Expo
-The new versions of Expo do not include the index.js file. Instead, it comes as expo-router/entry.js file inside the Node Modules folder. To extract this file, you should change the "main": "expo-router/entry" field in the package.json file to "main": "entry.js". You then add entry.js to the root of your project and copy the contents of expo-router/entry to it.
+The new versions of Expo do not include the index.js file. Instead, it comes as expo-router/entry.js file inside the Node Modules folder. To extract this file, you should change the "main": "expo-router/entry" field in the package.json file to "main": "entry.js". Then you can create entry.js file in your root directory.
 
 ### Mostly automatic installation
 
@@ -173,7 +168,7 @@ Netmera.initBroadcastReceiver(
 )
 
 // This should be called after Netmera.initBroadcastReceiver method.
-AppRegistry.registerComponent(appName, () => App);
+renderRootComponent(App);
 ```
 
 9. If you have custom Firebase Messaging integration, please see usage below.
